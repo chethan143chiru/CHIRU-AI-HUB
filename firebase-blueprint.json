@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Quiz": {
+      "title": "Quiz",
+      "description": "A user-created quiz on a specific topic.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the quiz." },
+        "description": { "type": "string", "description": "A brief description of the quiz." },
+        "topic": { "type": "string", "description": "The topic of the quiz." },
+        "creatorId": { "type": "string", "description": "The UID of the user who created the quiz." },
+        "creatorName": { "type": "string", "description": "The name of the user who created the quiz." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the quiz was created." },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": { "type": "string" },
+              "options": { "type": "array", "items": { "type": "string" } },
+              "correctAnswer": { "type": "string" },
+              "explanation": { "type": "string" }
+            }
+          }
+        }
+      },
+      "required": ["title", "topic", "creatorId", "questions"]
+    },
+    "Score": {
+      "title": "Score",
+      "description": "A record of a user's performance on a quiz.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user." },
+        "userName": { "type": "string", "description": "The name of the user." },
+        "userPhoto": { "type": "string", "description": "The photo URL of the user." },
+        "quizId": { "type": "string", "description": "The ID of the quiz." },
+        "quizTitle": { "type": "string", "description": "The title of the quiz." },
+        "score": { "type": "number", "description": "The number of correct answers." },
+        "totalQuestions": { "type": "number", "description": "The total number of questions." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the score was recorded." }
+      },
+      "required": ["userId", "quizId", "score", "totalQuestions"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile and stats.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "totalQuizzesCreated": { "type": "number" },
+        "totalQuizzesTaken": { "type": "number" }
+      },
+      "required": ["uid"]
+    }
+  },
+  "firestore": {
+    "/quizzes/{quizId}": {
+      "schema": "Quiz",
+      "description": "Collection of all quizzes."
+    },
+    "/scores/{scoreId}": {
+      "schema": "Score",
+      "description": "Collection of all quiz scores."
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    }
+  }
+}
