@@ -1,9 +1,3 @@
-Alright — let’s make your **GitHub README** look like a senior-level project, not a college dump 😎
-Clean, structured, and actually impressive.
-
-You can copy-paste this directly 👇
-
----
 
 # 🚀 **CHIRU AI – Multi-Agent Intelligent Dashboard**
 
