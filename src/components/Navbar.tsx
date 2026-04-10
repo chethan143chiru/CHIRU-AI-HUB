@@ -1,5 +1,5 @@
 import { User } from "firebase/auth";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { LogIn, LogOut, LayoutGrid, GraduationCap, Trophy } from "lucide-react";
 import { motion } from "motion/react";
 

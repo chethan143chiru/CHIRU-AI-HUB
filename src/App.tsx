@@ -4,14 +4,14 @@
  */
 
 import { useState, useEffect } from "react";
-import { auth, signInWithGoogle, logout } from "./lib/firebase";
+import { auth, signInWithGoogle, logout } from "@/lib/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { AGENTS } from "./constants";
-import { AgentGrid } from "./components/AgentGrid";
-import { QuizSystem } from "./components/QuizSystem";
-import { Leaderboard } from "./components/Leaderboard";
-import { Navbar } from "./components/Navbar";
-import { Toaster } from "./components/ui/sonner";
+import { AgentGrid } from "@/components/AgentGrid";
+import { QuizSystem } from "@/components/QuizSystem";
+import { Leaderboard } from "@/components/Leaderboard";
+import { Navbar } from "@/components/Navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {

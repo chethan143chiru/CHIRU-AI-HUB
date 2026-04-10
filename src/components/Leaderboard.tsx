@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { db } from "../lib/firebase";
+import { db } from "@/lib/firebase";
 import { collection, query, orderBy, limit, onSnapshot } from "firebase/firestore";
 import { Score } from "../types";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Trophy, Medal, Star, TrendingUp } from "lucide-react";
 import { motion } from "motion/react";
 
